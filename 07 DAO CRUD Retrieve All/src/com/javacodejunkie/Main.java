@@ -7,15 +7,13 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 
-		List<Employee> employees;
-		
 		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 		
-		employees = employeeDAO.getAll();
+		Employee employee = new Employee(0, 246802, "John", "Doe", 5);
 		
-		for (Employee employee : employees) {
-			System.out.println(employee);
-		}
+		int result = employeeDAO.insert(employee);
+		
+		System.out.println(result);
 		
 	}
 
